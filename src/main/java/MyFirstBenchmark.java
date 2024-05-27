@@ -8,5 +8,5 @@ public class MyFirstBenchmark {
         }
         return sum;
     }
-    
+
 }
