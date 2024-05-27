@@ -6,13 +6,13 @@ import org.openjdk.jmh.annotations.State;
 
 @State(Scope.Thread)
 public class BenchmarkState {
-    int[] array;
-
-    @Setup
-    public void prepare() {
-        array = new int[10];
-        for (int i = 0; i < 10; i++) {
-            array[i] = i;
-        }
-    }
+//    int[] array;
+//
+//    @Setup
+//    public void prepare() {
+//        array = new int[10];
+//        for (int i = 0; i < 10; i++) {
+//            array[i] = i;
+//        }
+//    }
 }
