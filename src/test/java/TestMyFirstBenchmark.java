@@ -6,7 +6,9 @@ public class TestMyFirstBenchmark {
 
     @Benchmark
     public void testSumArray() {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        myFirstBenchmark.sumArray(array);
+//        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//        myFirstBenchmark.sumArray(array);
+        BenchmarkState benchmarkState = new BenchmarkState();
+        myFirstBenchmark.sumArray(benchmarkState.array);
     }
 }
