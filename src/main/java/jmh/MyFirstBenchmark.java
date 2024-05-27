@@ -1,3 +1,5 @@
+package jmh;
+
 public class MyFirstBenchmark {
     // Benchmark methods will go here
 

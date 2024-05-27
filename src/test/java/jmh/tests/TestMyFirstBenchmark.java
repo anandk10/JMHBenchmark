@@ -1,3 +1,6 @@
+package jmh.tests;
+
+import jmh.MyFirstBenchmark;
 import org.openjdk.jmh.annotations.Benchmark;
 
 public class TestMyFirstBenchmark {
