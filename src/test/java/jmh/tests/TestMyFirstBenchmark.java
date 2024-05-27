@@ -1,0 +1,49 @@
+package jmh.tests;
+
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.State;
+
+public class TestMyFirstBenchmark {
+
+    @Benchmark
+    public void testSumArrayWithStaticArray() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        sumArray(array);
+    }
+
+
+    @Benchmark
+    public void testSumArrayWithState(BenchmarkState state) {
+        sumArray(state.array);
+    }
+
+
+    public long sumArray(int[] array) {
+        long sum = 0;
+        for (int i : array) {
+
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            sum += i;
+        }
+        return sum;
+    }
+
+    @State(Scope.Thread)
+    public static class BenchmarkState {
+        int[] array;
+
+        @Setup
+        public void prepare() {
+            array = new int[10];
+            for (int i = 0; i < 10; i++) {
+                array[i] = i;
+            }
+        }
+    }
+}
